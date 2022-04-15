@@ -10,11 +10,15 @@ function calcular() {
 
   let resultadoCalculo = calculaImc(peso, altura);
 
-  resultado.textContent = `
-  ${nome}, o seu IMC é: ${resultadoCalculo.toFixed(2)}.
-
-  ${classificacaoImc(resultadoCalculo)}
-  `;
+  if (resultadoCalculo) {
+    resultado.textContent = `
+    ${nome}, o seu IMC é: ${resultadoCalculo.toFixed(2)}.
+  
+    ${classificacaoImc(resultadoCalculo)}
+    `;
+  } else {
+    alert("Favor preencha as informações necessárias para realizar o calculo.");
+  }
 }
 
 function limpar() {
